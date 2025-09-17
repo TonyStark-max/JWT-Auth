@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="/Css%20files/Login.css">
+</head>
+<body>
+<div class="auth-container">
+    <div class="auth-card">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit" onclick="Login()">Login</button>
+            <p class="error" id="loginError"></p>
+        </form>
+        <p>Don't have an account? <a href="Register.html" style="text-decoration: none">Register here</a></p>
+    </div>
+</div>
+<script src="/Js%20files/Login.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Student</title>
+  <link rel="stylesheet" href=/Css%20files/Login.css>
+</head>
+<body>
+<div class="auth-container">
+  <div class="auth-card">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button onclick="register()">Register</button>
+      <p class="error" id="Error"></p>
+    </form>
+    <p>Already have an account? <a href="Login.html" style="text-decoration: none">Login here</a></p>
+  </div>
+</div>
+<script src="/Js%20files/Register.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+    overflow-x: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #2575fc;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translateX(-300px);
+    animation: slideSidebar 1s forwards;
+}
+
+@keyframes slideSidebar {
+    to { transform: translateX(0); }
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: rgba(255,255,255,0.2);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 1s 0.5s forwards;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeDown 0.8s 1s forwards;
+}
+
+.header p {
+    color: #555;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeDown 0.8s 1.2s forwards;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardFade 0.8s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 1.4s; }
+.card:nth-child(2) { animation-delay: 1.6s; }
+.card:nth-child(3) { animation-delay: 1.8s; }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #2575fc;
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container { flex-direction: column; }
+    .sidebar { width: 100%; flex-direction: row; justify-content: space-around; gap: 0; }
+    .main-content { padding: 20px; }
+    .cards { flex-direction: column; }
+}
+#mainContent{
+    flex: 1;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+@media (max-width: 992px) {
+    #mainContent{
+        padding: 15px;
+    }
+}
+@media (max-width: 576px) {
+    #mainContent{
+        padding: 10px;
+    }
+}
+
